@@ -28,6 +28,13 @@ spec:
         - name: sample
           value: "hello"
 
+      volumeMounts: 
+        - name: config-volume
+          mountpath: /etc/config
+  volumes:
+    - name: config-voulme
+      ConfigMap:
+        name: my-config
 
     - name: sidecar
       image: busybox
