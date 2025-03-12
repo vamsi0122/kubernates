@@ -24,6 +24,7 @@ spec:
         limits: #hard limit
           cpu: "250m"
           memory: "248Mi"
+
       env: 
         - name: sample
           value: "hello"
@@ -31,14 +32,17 @@ spec:
       volumeMounts: 
         - name: config-volume
           mountPath: /etc/config
+
+    - name: sidecar
+      image: busybox
+      command: ["/bin/sh", "-c", "while true; do wget -qO- http://localhost; sleep 5; done"]
+      
   volumes:
     - name: config-volume
       configMap:
         name: my-config
 
-    - name: sidecar
-      image: busybox
-      command: ["/bin/sh", "-c", "while true; do wget -qO- http://localhost; sleep 5; done"]
+    
 
 
 
