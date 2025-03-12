@@ -10,3 +10,14 @@ spec:
       ports:
         - containerPort: 80
 
+    - name: my-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+    - name: sidecar
+      image: busybox
+      command: ["/bin/sh", "-c", "while true; do wget -qO- http://localhost; sleep 5; done"]
+
+
+
