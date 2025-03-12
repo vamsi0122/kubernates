@@ -30,7 +30,7 @@ spec:
 
       volumeMounts: 
         - name: config-volume
-          mountpath: /etc/config
+          mountPath: /etc/config
   volumes:
     - name: config-volume
       ConfigMap:
