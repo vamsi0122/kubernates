@@ -32,7 +32,7 @@ spec:
         - name: config-volume
           mountpath: /etc/config
   volumes:
-    - name: config-voulme
+    - name: config-volume
       ConfigMap:
         name: my-config
 
