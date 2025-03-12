@@ -16,6 +16,14 @@ spec:
       image: nginx:latest
       ports:
         - containerPort: 80
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+        limits: #hard limit
+          cpu: "250m"
+          memory: "248Mi"
+
 
     - name: sidecar
       image: busybox
