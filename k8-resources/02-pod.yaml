@@ -33,7 +33,7 @@ spec:
           mountPath: /etc/config
   volumes:
     - name: config-volume
-      ConfigMap:
+      configMap:
         name: my-config
 
     - name: sidecar
