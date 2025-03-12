@@ -3,6 +3,11 @@ kind: Pod
 metadata:
   name: mypod1
   namespace: roboshop
+  labels:
+    app: nginx
+    env: dta
+    tier: web-tier
+
 spec:
   containers:
     - name: my-container
