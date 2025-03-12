@@ -24,6 +24,9 @@ spec:
         limits: #hard limit
           cpu: "250m"
           memory: "248Mi"
+      env: 
+        - name: sample
+          value: "hello"
 
 
     - name: sidecar
