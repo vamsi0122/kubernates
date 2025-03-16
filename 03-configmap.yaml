@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+  namespace: roboshop
+data:
+  app-properties: |
+    database_url=mysql://db:3306
+    log_level=info
+  Env: "dta"
