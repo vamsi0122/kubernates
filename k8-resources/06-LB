@@ -26,4 +26,4 @@ spec:
   - name: name-of-service-port
     protocol: TCP
     port: 80 # this port belongs to service
-    targetPort: http-web-svc # this port belongs to container
+    targetPort: http-web-svc # this port belongs to container means 80
