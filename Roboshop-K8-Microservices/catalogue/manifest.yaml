@@ -31,9 +31,9 @@ spec:
           limits:
             cpu: "100m"
             memory: "128Mi"
-      envFrom:
-      - ConfigMap: 
-          name: catalogue
+        envFrom:
+        - configMapRef:
+            name: catalogue
       
 ---
 apiVersion: v1
