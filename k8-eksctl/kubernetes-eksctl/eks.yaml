@@ -12,6 +12,6 @@ managedNodeGroups: # this is also completely managed by AWS
     spot: true
     availabilityZones: # ebs static provisioning
     - us-east-1b
-    desiredCapacity: 3
+    desiredCapacity: 2
     ssh:
       publicKeyName: kubernetes # replace this with your keypair exists in AWS.
