@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: vamsi0122/mongodb:k8.1
+        image: vamsi0122/mongodb:k8.2
 ---
 apiVersion: v1
 kind: Service

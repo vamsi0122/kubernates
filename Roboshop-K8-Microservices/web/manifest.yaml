@@ -144,7 +144,7 @@ spec:
             path: nginx.conf
       containers:
       - name: catalogue
-        image: vamsi0122/web:k8.1
+        image: vamsi0122/web:k8.2
         resources:
           requests:
             cpu: "50m"
@@ -174,3 +174,23 @@ spec:
     protocol: TCP
     port: 80 # this port belongs to service
     targetPort: 80 # this port belongs to container
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: web
+  namespace: roboshop
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: web
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 75

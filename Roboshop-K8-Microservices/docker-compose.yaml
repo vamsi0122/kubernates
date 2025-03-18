@@ -23,31 +23,31 @@ services:
     - roboshop
     depends_on:
     - mongodb
-  redis:
-    image: redis
-    container_name: redis
-    networks:
-      - roboshop
-    volumes:
-    - source: redis
-      target: /data
-      type: volume
-  user:
-    image: vamsi0122/user:v1
-    container_name: user
-    networks:
-      - roboshop
-    depends_on:
-      - mongodb
-      - redis
-  cart:
-    image: vamsi0122/cart:v1
-    container_name: cart
-    networks:
-      - roboshop
-    depends_on:
-      - redis
-      - catalogue
+  # redis:
+  #   image: redis
+  #   container_name: redis
+  #   networks:
+  #     - roboshop
+  #   volumes:
+  #   - source: redis
+  #     target: /data
+  #     type: volume
+  # user:
+  #   image: vamsi0122/user:v1
+  #   container_name: user
+  #   networks:
+  #     - roboshop
+  #   depends_on:
+  #     - mongodb
+  #     - redis
+  # cart:
+  #   image: vamsi0122/cart:v1
+  #   container_name: cart
+  #   networks:
+  #     - roboshop
+  #   depends_on:
+  #     - redis
+  #     - catalogue
   # mysql:
   #   image: joindevops/mysql:v1
   #   container_name: mysql
@@ -95,7 +95,7 @@ services:
     - "80:80"
     depends_on:
     - catalogue
-    - user
-    - cart
-    # - shipping
+    # - user
+    # - cart
+    # # - shipping
     # - payment
