@@ -8,7 +8,7 @@ volumes:
   rabbitmq:
 services:
   mongodb:
-    image: vamsi0122/mongodb:v1
+    image: vamsi0122/mongodb:k8.2
     container_name: mongodb
     networks:
       - roboshop
@@ -17,7 +17,7 @@ services:
       target: /data/db
       type: volume
   catalogue:
-    image: vamsi0122/catalogue:v1
+    image: vamsi0122/catalogue:k8.2
     container_name: catalogue
     networks:
     - roboshop
@@ -87,7 +87,7 @@ services:
   #     - user
   #     - rabbitmq
   web:
-    image: vamsi0122/web:v1
+    image: vamsi0122/web:k8.2
     container_name: web
     networks:
     - roboshop
